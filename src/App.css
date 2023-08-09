@@ -1,6 +1,7 @@
-
+/* Import Google Fonts and other initial styles */
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Libre+Baskerville&family=Merriweather:wght@700&family=Work+Sans&display=swap");
 
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +10,7 @@
 }
 
 html {
-  color: rgb(96 101 123);
+  color: rgb(22, 36, 99);
 }
 
 body {
@@ -17,16 +18,30 @@ body {
   justify-content: center;
   align-items: center;
   align-self: center;
-  background: rgb(255 255 255);
+  background: url('https://i.pinimg.com/564x/4c/cd/a7/4ccda7a6b5c0d2594c76d7519029ee45.jpg') center/cover no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(180, 217, 219, 0.7);
+  z-index: -1;
+}
+
+/* Main container */
 .container {
-  padding: 30px;
+  padding: 170px;
   margin-top: 80px;
 }
 
 h2 {
-  color: rgb(43 45 56);
+  color: rgb(17, 25, 56);
   text-align: center;
   font-size: 48px;
   letter-spacing: -0.2px;
@@ -40,99 +55,46 @@ p {
   margin-bottom: 100px;
 }
 
-.main-content {
-  max-width: 50rem;
-  width: 100%;
-  min-height: 400px;
-  height: auto;
-  padding: 18px 18px 120px 18px;
-  position: relative;
-  resize: none;
-  box-shadow: 0 12px 48px 0px rgb(109 117 141 / 20%);
-  background: rgb(255 255 255);
-  border: 0.5px solid rgb(231 233 245);
-  border-radius: 16px;
-}
-
-.main-content:focus {
-  border: 0.3px solid rgb(43, 45, 56, 0.3);
-  outline: none;
-}
-
-p,
-.main-content {
-  font-size: 18px;
-  letter-spacing: 1px;
-  word-spacing: 2px;
-  line-height: 1.6;
-}
-
-.btn-style{
+/* Buttons container */
+.btn-style {
   display: flex;
-
+  justify-content: center; /* Center align the buttons horizontally */
+  align-items: center; /* Center align the buttons vertically */
 }
 
-button {
-  /* position: absolute; */
-  background: rgb(17 166 131);
-  color: rgb(255 255 255);
-  border-radius: 6px;
-  padding: 16px 32px;
+/* Buttons */
+.btn-style button {
+  background-color: #3498db;
+  color: #ffffff;
   border: none;
-  font-size: 18px;
-  letter-spacing: 1px;
-  margin: auto;
-  display: flex;
-  position: relative;
-  margin-top: -80px;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 }
 
-button:focus,
-button:hover {
-  background: rgb(42, 201, 164);
-  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+.btn-style button:hover {
+  background-color: #165986;
 }
 
-.counter-container {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
+button.copied {
+  background-color: #27ae60;
+  color: #ffffff;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    margin-top: 20px;
-  }
+/* Customize button color and size */
+.btn-custom {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
 
-  h2 {
-    font-size: 28px;
-  }
+.btn-custom:hover {
+  background-color: #c0392b;
+}
 
-  p {
-    font-size: 16px;
-    word-spacing: normal;
-    margin-bottom: 40px;
-    margin-top: 15px;
-  }
-
-  .main-content {
-    /*border:1px solid*/
-    font-size: 16px;
-    word-spacing: normal;
-  }
-
-  button {
-    padding: 12px 28px;
-    font-size: 16px;
-    margin-top: -70px;
-  }
-
-  .counter-container {
-    flex-direction: column;
-  }
-
-  .counter-container p:first-child {
-    margin-bottom: 0;
-  }
+/* Increase button size */
+.btn-large {
+  padding: 15px 30px;
+  font-size: 18px;
 }
